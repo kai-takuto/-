@@ -7,11 +7,11 @@ while True:
         if n > 0:
             break
         else:
-            raise ValueError
+            raise ValueError('input value is not valid integer. it must be number that larger than 0')
     except ValueError:
         pass
-    print('＊＊エラー：入力した値は自然数ではありません＊＊')
-    print('自然数(1, 2, 3...)を入力してください↓↓↓↓↓↓')
+        print('＊＊エラー：入力した値は自然数ではありません＊＊')
+        print('自然数(1, 2, 3...)を入力してください↓↓↓↓↓↓')
     
 # for i in range(n):
     
