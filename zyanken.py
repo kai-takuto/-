@@ -2,7 +2,7 @@ print('-じゃんけんゲームが始まるぞ！！-\n')
 print('入力した数だけじゃんけんできるぞ！！')
 print('↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓\n')
 #(グー：１,チョキ：２,パー：３)のどれかを入力させて出し手を比較
-def zyanken(your_hands, cpu_hands):
+def zyanken(your_hands:int, cpu_hands:int):
     if your_hands == cpu_hands:
         print('同じ手を出した！結果はあいこ！')
         return 'draw'
@@ -26,12 +26,17 @@ def zyanken(your_hands, cpu_hands):
         return 'loss'
     else:
         print('＊＊エラー：1~3の数字を入力してください＊＊')
-    return result
 
 def print_janken_results(results):
     wins = results.count('win')
     losses = results.count('loss')
     draws = results.count('draw')
+    if results == 'win':
+        win += 1
+    elif results == 'loss':
+        losse += 1
+    elif results == 'draw':
+        draw += 1
     
     print(f"勝利数: {wins}")
     print(f"敗北数: {losses}")
