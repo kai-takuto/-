@@ -2,7 +2,7 @@ print('-じゃんけんゲームが始まるぞ！！-\n')
 print('入力した数だけじゃんけんできるぞ！！')
 print('↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓\n')
 #(グー：１,チョキ：２,パー：３)のどれかを入力させて出し手を比較
-def zyanken(your_hands, cpu_hands, result):
+def zyanken(your_hands:int, cpu_hands:int, result:int):
     if your_hands == cpu_hands:
         print('同じ手を出した！結果はあいこ！')
         result['draw'] += 1
@@ -38,6 +38,8 @@ while True:
         print(e)
         print('＊＊エラー：入力した値は自然数ではありません＊＊')
         print('自然数(1, 2, 3...)を入力してください↓↓↓↓↓↓')
+
+        
 result ={'win': 0, 'lose': 0, 'draw': 0}
 # for i in range(n):
     
