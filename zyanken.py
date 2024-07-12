@@ -5,25 +5,18 @@ print('↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓�
 def zyanken(your_hands:int, cpu_hands:int, result:int):
     if your_hands == cpu_hands:
         print('同じ手を出した！結果はあいこ！')
-        result['draw'] += 1
     elif your_hands == 1 and cpu_hands == 2:
         print('(あなた)はグー、(相手)はチョキを出した！あなたの勝ち！')
-        result['win'] += 1
     elif your_hands == 1 and cpu_hands == 3:
         print('(あなた)はグー、(相手)はパーを出した！あなたの負け！')
-        result['lose'] += 1
     elif your_hands == 2 and cpu_hands == 1:
         print('(あなた)はチョキ、(相手)はグーを出した！あなたの負け！')
-        result['lose'] +=1
     elif your_hands == 2 and cpu_hands == 3:
         print('(あなた)はチョキ、(相手)はパーを出した！あなたの勝ち！')
-        result['win'] += 1
     elif your_hands == 3 and cpu_hands == 1:
         print('(あなた)はパー、(相手)はグーを出した！あなたの勝ち！')
-        result['win'] += 1
     elif your_hands == 3 and cpu_hands == 2:
         print('(あなた)はパー、(相手)はチョキを出した！あなたの負け！')
-        result['lose'] += 1
     else:
         print('＊＊エラー：1~3の数字を入力してください＊＊')
     return result
