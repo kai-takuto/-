@@ -1,3 +1,5 @@
+import random
+
 
 def zyanken(your_hands: int, cpu_hands: int) -> str:
     if your_hands == cpu_hands:
@@ -9,7 +11,7 @@ def zyanken(your_hands: int, cpu_hands: int) -> str:
     return 'lose'
 
 
-def zyanken_results(results: list):
+def zyanken_results(results: list) -> None:
     wins = results.count('win')
     lose = results.count('lose')
     draws = results.count('draw')
@@ -34,15 +36,13 @@ def main():
             print(e)
             print('＊＊エラー：入力した値は自然数ではありません＊＊')
             print('自然数(1, 2, 3...)を入力してください↓↓↓↓↓↓')
+
     print_results = []
-    result = zyanken(your_hands=3, cpu_hands=3)
+
+    result = zyanken(your_hands=3, cpu_hands=2)
     print_results.append(result)
     zyanken_results(print_results)
 
 
 if __name__ == "__main__":
     main()
-
-
-    
-        
