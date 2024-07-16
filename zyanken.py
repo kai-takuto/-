@@ -1,6 +1,7 @@
 import random
 
 
+# じゃんけんの勝敗
 def zyanken(your_hands: int, cpu_hands: int) -> str:
     if your_hands == cpu_hands:
         return 'draw'
@@ -11,6 +12,7 @@ def zyanken(your_hands: int, cpu_hands: int) -> str:
     return 'lose'
 
 
+# じゃんけんの総合結果
 def zyanken_results(results: list) -> None:
     wins: int = results.count('win')
     lose: int = results.count('lose')
@@ -21,7 +23,8 @@ def zyanken_results(results: list) -> None:
     print(f"引き分け数: {draws}")
 
 
-def main():
+# じゃんけん実行
+def main() -> None:
     print('-じゃんけんゲームが始まるぞ！！-\n')
     print('入力した数だけじゃんけんできるぞ！！')
     print('↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓\n')
@@ -36,15 +39,17 @@ def main():
             print(e)
             print('＊＊エラー：入力した値は自然数ではありません＊＊')
             print('自然数(1, 2, 3...)を入力してください↓↓↓↓↓↓')
-
-    print_results: list[str] = []
-    #勝負結果を表示させるためのテストコードです。
+    # 対戦結果を表示させる部分・
+    results: list[str] = []
     result: str = zyanken(your_hands=3, cpu_hands=2)
     your_hands: int = 3
     cpu_hands: int = 2
+
     print(f'あなたは{your_hands}を、相手は{cpu_hands}を出した')
-    print_results.append(result)
-    zyanken_results(print_results)
+    print(result)
+
+    results.append(result)
+    zyanken_results(results)
 
 
 if __name__ == "__main__":
