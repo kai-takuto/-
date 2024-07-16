@@ -50,13 +50,14 @@ def main():
             print(e)
             print('＊＊エラー：入力した値は自然数ではありません＊＊')
             print('自然数(1, 2, 3...)を入力してください↓↓↓↓↓↓')
-
-
-if __name__ == "__main__":
     print_results = []
     result = zyanken(your_hands=3, cpu_hands=3)
     print_results.append(result)
     zyanken_results(print_results)
+
+
+if __name__ == "__main__":
+    main()
 
 
     
