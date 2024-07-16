@@ -12,9 +12,9 @@ def zyanken(your_hands: int, cpu_hands: int) -> str:
 
 
 def zyanken_results(results: list) -> None:
-    wins = results.count('win')
-    lose = results.count('lose')
-    draws = results.count('draw')
+    wins: int = results.count('win')
+    lose: int = results.count('lose')
+    draws: int = results.count('draw')
 
     print(f"勝利数: {wins}")
     print(f"敗北数: {lose}")
@@ -40,6 +40,9 @@ def main():
     print_results = []
 
     result = zyanken(your_hands=3, cpu_hands=2)
+    your_hands = 3
+    cpu_hands = 2
+    print(f'あなたは{your_hands}を、相手は{cpu_hands}を出した')
     print_results.append(result)
     zyanken_results(print_results)
 
