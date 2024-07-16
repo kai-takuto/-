@@ -37,11 +37,11 @@ def main():
             print('＊＊エラー：入力した値は自然数ではありません＊＊')
             print('自然数(1, 2, 3...)を入力してください↓↓↓↓↓↓')
 
-    print_results = []
-
-    result = zyanken(your_hands=3, cpu_hands=2)
-    your_hands = 3
-    cpu_hands = 2
+    print_results: list[str] = []
+    #勝負結果を表示させるためのテストコードです。
+    result: str = zyanken(your_hands=3, cpu_hands=2)
+    your_hands: int = 3
+    cpu_hands: int = 2
     print(f'あなたは{your_hands}を、相手は{cpu_hands}を出した')
     print_results.append(result)
     zyanken_results(print_results)
