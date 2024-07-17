@@ -38,10 +38,10 @@ def main() -> None:
             print(e)
             print('＊＊エラー：入力した値は自然数ではありません＊＊')
             print('自然数(1, 2, 3...)を入力してください↓↓↓↓↓↓')
-    # 対戦結果を表示させる部分・
+    # 総合結果をリストに格納
     results: list[str] = []
     hands: list = ['グー', 'チョキ', 'パー']
-    # 出し手を選択、cpuはランダムに出すようにRev後に作成
+    # 出し手を選択、playerは入力、cpuはランダムに出すようにRev後に作成
     result: str = judge(your_hands=2, cpu_hands=1)
     player_choice: int = 2
     cpu_choice: int = 1
@@ -52,8 +52,9 @@ def main() -> None:
     print(f'あなた>>{player_hands}')
     print(f'相手>>{cpu_hands}')
     print(f'結果>>{result}')
-
+    # 結果をリストに追加
     results.append(result)
+    # 総合結果を出力
     judge_results(results)
 
 
