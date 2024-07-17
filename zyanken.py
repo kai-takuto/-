@@ -1,7 +1,7 @@
 import random
 
 
-def zyanken(your_hands: int, cpu_hands: int) -> str:
+def judge(your_hands: int, cpu_hands: int) -> str:
     if your_hands == cpu_hands:
         return 'draw'
     if ((your_hands == 0 and cpu_hands == 1)
@@ -12,7 +12,7 @@ def zyanken(your_hands: int, cpu_hands: int) -> str:
 
 
 # じゃんけんの総合結果
-def zyanken_results(results: list) -> None:
+def judge_results(results: list) -> None:
     wins: int = results.count('win')
     lose: int = results.count('lose')
     draws: int = results.count('draw')
@@ -42,7 +42,7 @@ def main() -> None:
     results: list[str] = []
     hands: list = ['グー', 'チョキ', 'パー']
     # 出し手を選択、cpuはランダムに出すようにRev後に作成
-    result: str = zyanken(your_hands=2, cpu_hands=1)
+    result: str = judge(your_hands=2, cpu_hands=1)
     player_choice: int = 2
     cpu_choice: int = 1
     # 選んだ出し手をリストの中に入れる
@@ -54,7 +54,7 @@ def main() -> None:
     print(f'結果>>{result}')
 
     results.append(result)
-    zyanken_results(results)
+    judge_results(results)
 
 
 if __name__ == "__main__":
