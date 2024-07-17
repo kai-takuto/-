@@ -1,13 +1,12 @@
 import random
 
 
-# じゃんけんの勝敗
 def zyanken(your_hands: int, cpu_hands: int) -> str:
     if your_hands == cpu_hands:
         return 'draw'
-    if ((your_hands == 1 and cpu_hands == 2)
-            or (your_hands == 2 and cpu_hands == 3)
-            or (your_hands == 3 and cpu_hands == 1)):
+    if ((your_hands == 0 and cpu_hands == 1)
+            or (your_hands == 1 and cpu_hands == 2)
+            or (your_hands == 2 and cpu_hands == 0)):
         return 'win'
     return 'lose'
 
@@ -41,12 +40,18 @@ def main() -> None:
             print('自然数(1, 2, 3...)を入力してください↓↓↓↓↓↓')
     # 対戦結果を表示させる部分・
     results: list[str] = []
-    result: str = zyanken(your_hands=3, cpu_hands=2)
-    your_hands: int = 3
-    cpu_hands: int = 2
-
-    print(f'あなたは{your_hands}を、相手は{cpu_hands}を出した')
-    print(result)
+    hands: list = ['グー', 'チョキ', 'パー']
+    # 出し手を選択、cpuはランダムに出すようにRev後に作成
+    result: str = zyanken(your_hands=2, cpu_hands=1)
+    player_choice: int = 2
+    cpu_choice: int = 1
+    # 選んだ出し手をリストの中に入れる
+    player_hands: str = hands[player_choice]
+    cpu_hands: str = hands[cpu_choice]
+    # 対戦結果を出力
+    print(f'あなた>>{player_hands}')
+    print(f'相手>>{cpu_hands}')
+    print(f'結果>>{result}')
 
     results.append(result)
     zyanken_results(results)
