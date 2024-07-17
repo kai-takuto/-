@@ -38,11 +38,11 @@ def fight_num() -> int:
 
 
 # じゃんけんの出し手を選択・表示
-def choice_hands(n: int) -> None:
+def choice_hands(round_num: int) -> None:
     results: list[str] = []
     hands: list = ['グー', 'チョキ', 'パー']
 
-    for i in range(n):
+    for i in range(round_num):
         while True:
             try:
                 player_choice: int = int(input('(グー：0, チョキ：1, パー：2) あなたが出す手は？：'))
@@ -74,8 +74,8 @@ def main() -> None:
     print('-じゃんけんゲームが始まるぞ！！-\n')
     print('入力した数だけじゃんけんできるぞ！！')
     print('↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓\n')
-    n: int = fight_num()
-    choice_hands(n)
+    round_num: int = fight_num()
+    choice_hands(round_num)
 
 
 if __name__ == "__main__":
