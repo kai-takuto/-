@@ -22,40 +22,60 @@ def judge_results(results: list) -> None:
     print(f"引き分け数: {draws}")
 
 
-# じゃんけん実行
-def main() -> None:
-    print('-じゃんけんゲームが始まるぞ！！-\n')
-    print('入力した数だけじゃんけんできるぞ！！')
-    print('↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓\n')
+# じゃんけんをする回数を入力するところ
+def fight_num() -> int:
     while True:
         try:
             n: int = int(input('じゃんけんしたい回数(自然数)を入力してね--->'))
             if n > 0:
-                break
+                return n
             else:
                 raise ValueError('input value is not valid integer. it must be number that larger than 0')
         except ValueError as e:
             print(e)
             print('＊＊エラー：入力した値は自然数ではありません＊＊')
             print('自然数(1, 2, 3...)を入力してください↓↓↓↓↓↓')
-    # 総合結果をリストに格納
+
+
+# じゃんけんの出し手を選択・表示
+def choice_hands(round_num: int) -> None:
     results: list[str] = []
     hands: list = ['グー', 'チョキ', 'パー']
-    # 出し手を選択、playerは入力、cpuはランダムに出すようにRev後に作成
-    result: str = judge(your_hands=2, cpu_hands=1)
-    player_choice: int = 2
-    cpu_choice: int = 1
-    # 選んだ出し手をリストの中に入れる
-    player_hands: str = hands[player_choice]
-    cpu_hands: str = hands[cpu_choice]
-    # 対戦結果を出力
-    print(f'あなた>>{player_hands}')
-    print(f'相手>>{cpu_hands}')
-    print(f'結果>>{result}')
-    # 結果をリストに追加
-    results.append(result)
-    # 総合結果を出力
-    judge_results(results)
+
+    for i in range(round_num):
+        while True:
+            try:
+                player_choice: int = int(input('(グー：0, チョキ：1, パー：2) あなたが出す手は？：'))
+                if player_choice in [0, 1, 2]:
+                    break
+                else:
+                    raise ValueError('input value is not valid integer. it must be number 0 and 2')
+            except ValueError as e:
+                print(e)
+                print('＊＊エラー：グー(0)、チョキ(1)、パー(2) のいずれかを入力してください＊＊')
+
+        player_hands: str = hands[player_choice]
+        cpu_choice: int = random.randint(0, 2)
+        cpu_hands: str = hands[cpu_choice]
+
+        # 出し手を選択、playerは入力、cpuはランダムに出すようにRev後に作成
+        result: str = judge(player_choice, cpu_choice)
+        # 対戦結果を出力
+        print(f'あなた>>{player_hands}')
+        print(f'相手>>{cpu_hands}')
+        print(f'結果>>{result}')
+
+        # 結果をリストに追加
+        results.append(result)
+
+
+# じゃんけん実行
+def main() -> None:
+    print('-じゃんけんゲームが始まるぞ！！-\n')
+    print('入力した数だけじゃんけんできるぞ！！')
+    print('↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓\n')
+    round_num: int = fight_num()
+    choice_hands(round_num)
 
 
 if __name__ == "__main__":
