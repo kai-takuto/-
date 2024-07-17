@@ -3,19 +3,19 @@ import random
 
 def judge(your_hands: int, cpu_hands: int) -> str:
     if your_hands == cpu_hands:
-        return 'draw'
+        return '引き分け'
     if ((your_hands == 0 and cpu_hands == 1)
             or (your_hands == 1 and cpu_hands == 2)
             or (your_hands == 2 and cpu_hands == 0)):
-        return 'win'
-    return 'lose'
+        return '勝ち'
+    return '負け'
 
 
 # じゃんけんの総合結果
 def judge_results(results: list) -> None:
-    wins: int = results.count('win')
-    lose: int = results.count('lose')
-    draws: int = results.count('draw')
+    wins: int = results.count('勝ち')
+    lose: int = results.count('負け')
+    draws: int = results.count('引き分け')
 
     print(f"勝利数: {wins}")
     print(f"敗北数: {lose}")
