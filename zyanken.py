@@ -67,6 +67,8 @@ def choice_hands(round_num: int) -> None:
 
         # 結果をリストに追加
         results.append(result)
+    print('<<<総合結果>>>')
+    judge_results(results)
 
 
 # じゃんけん実行
